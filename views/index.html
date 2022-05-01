@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US States</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<nav class="nav__nav">
+    <div class="nav__logo">
+        <a href="#home">
+            <img src="img/navlogo.png" alt="US Flag">
+        </a>
+    </div>
+    <ul class="nav__items">
+        <li class="nav__item center p-text">
+            <div></div>
+            <a href="#home" class="nav__link">Home</a>
+        </li>
+        <li class="nav__item center p-text">
+            <div></div>
+            <a href="#flags" class="nav__link">Flags</a>
+        </li>
+        <li class="nav__item center p-text">
+            <div></div>
+            <a href="#names" class="nav__link">Names</a>
+        </li>
+        <li class="nav__item center p-text">
+            <div></div>
+            <a href="#regions" class="nav__link">Regions</a>
+        </li>
+    </ul>
+</nav>
+
+
+<body>
+    <!-- HEADER -->
+    <div class="container header__header center whitebg" id="home">
+        <div class="wrapper">
+            <div>
+                <div class="header__content">
+                    <div class="header__text center">
+                        <h1 class="head-text">Welcome, explore <span>the United States!</span></h1>
+                    </div>
+                    <div class="header__button_holder center">
+                        <button class="header__button" id="begin" onclick="buttonExpand()">
+                            Get Started
+                        </button>
+                        <button class="header__button header__expand_button" type="button" onclick="window.location.href='#flags'; buttonCollapse()">
+                            Flags
+                        </button>   
+                        <button class="header__button header__expand_button" type="button" onclick="window.location.href='#names'; buttonCollapse()">
+                            Names
+                        </button>
+                        <button class="header__button header__expand_button" type="button" onclick="window.location.href='#regions'; buttonCollapse()">
+                            Regions
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLAGS -->
+    <div class="container flags__flags center lightgreybg" id="flags">
+        <div class="wrapper">
+            <div>
+                <div class="flags__content">
+                    <div class="flags__text center">
+                        <h1 class="head-text">US States by <span>Flag</span></h1>
+                    </div>
+                    <div class="flags__flag_holder center" id="flag_holder">
+                        <!--  -->
+                        <% for (i = 0; i < 50; i++) { %>
+                            <a href="#" class="flags__card center">
+                                <div class="flags__card_img center">
+                                    <img src="<%= statesList[i].state_flag_url %>" alt="<%= statesList[i].code %>">
+                                </div>
+                                <div class="flags__card_body">
+                                    <p class="bold-text"><%= statesList[i].code %></p>
+                                </div>
+                            </a>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAMES -->
+    <div class="container names__names center whitebg" id="names">
+        <div class="wrapper">
+            <div>
+                <div class="names__content">
+                    <div class="names__text center">
+                        <h1 class="head-text">US States by <span>Name</span></h1>
+                    </div>
+                    <div class="names__names_holder center">
+                        <% const states = []; %>
+                            <% for (var key in statesList) {
+                                if (statesList.hasOwnProperty(key)) states.push(statesList[key].state);
+                            }
+                            %>
+                            <% for (i = 0; i < states.length; i++ ) {
+                                if (states.indexOf(states[i].slice(0,1)) == -1) states.splice(i, 0, states[i].slice(0,1))
+                            }
+                            %>
+                        <div class="names__names_column center">
+                            <% for (i = 0; i < 22; i++) { %>
+                                <% if (states[i].length > 1) { %>
+                                    <a href="#" class="names__item p-text">
+                                        <%= states[i] %>
+                                    </a>
+                                <% } else { %>
+                                    <h4 class="bold-text">
+                                        <%= states[i] %>
+                                    </h4>
+                                <% } %>
+                            <% } %>
+                        </div>
+                        <div class="names__names_column center">
+                            <% for (i = 22; i < 45; i++) { %>
+                                <% if (states[i].length > 1) { %>
+                                    <a href="#" class="names__item p-text">
+                                        <%= states[i] %>
+                                    </a>
+                                <% } else { %>
+                                    <h4 class="bold-text">
+                                        <%= states[i] %>
+                                    </h4>
+                                <% } %>
+                            <% } %>
+                        </div>
+                        <div class="names__names_column center">
+                            <% for (i = 45; i < 69; i++) { %>
+                                <% if (states[i].length > 1) { %>
+                                    <a href="#" class="names__item p-text">
+                                        <%= states[i] %>
+                                    </a>
+                                <% } else { %>
+                                    <h4 class="bold-text">
+                                        <%= states[i] %>
+                                    </h4>
+                                <% } %>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- REGIONS -->
+    <div class="container regions__regions center lightgreybg" id="regions">
+        <div class="wrapper">
+            <div>
+                <div class="regions__content">
+                    <div class="regions__text center">
+                        <h1 class="head-text">US States by <span>Region</span></h1>
+                    </div>
+                    <% const regions = {}; %>
+                        <% for (var key in statesList) {
+                            if (statesList.hasOwnProperty(key)) regions[statesList[key].state] = statesList[key].region;
+                        }
+                        %>
+                    %>
+                    <div class="regions__region_holder center">
+                        <!--  -->
+                        <!-- <h1>alabama.website %></h1>
+                        <h1>alaska.website %></h1> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    // BUTTON SCRIPTS
+    const begin = document.getElementById('begin');
+    const expands = document.querySelectorAll('.header__expand_button');
+    const buttonExpand = () => {
+        for(i = 0; i < expands.length; i++) {
+            if(expands[i]) {
+                expands[i].classList.remove('header__expand_button');
+            }
+        }
+        begin.classList.add('header__hide');        
+    }
+    const buttonCollapse = () => {
+        for(i = 0; i < expands.length; i++) {
+            if(expands[i]) {
+                expands[i].classList.add('header__expand_button');
+            }
+        }
+        begin.classList.remove('header__hide');
+    }
+
+    // Flag Cards
+    // const flags = document.getElementById('flag_holder');
+    // const statesList = stateslist;
+    // console.log(statesList);
+    // for (i = 0; i < 50; i ++) {
+    //     const flag_src = 'statesList[' + i + '].flag_img_url';
+    //     const code = 'statesList[' + i + '].code';
+
+    // }
+</script>
+
+</html>
