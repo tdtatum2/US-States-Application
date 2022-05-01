@@ -314,6 +314,7 @@
     background-color: var(--white-color);
     border-radius: 10px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.75);
+    flex-wrap: wrap;
 }
 
 .names__names_column {
