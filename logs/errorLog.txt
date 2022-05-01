@@ -1485,4 +1485,8 @@ Cannot read properties of undefined (reading 'length')20220501	11:50:58 	 2a7096
     113|                             <% for (i = 0; i < 23; i++) { %>
     114|                                 <% if (states[i].length > 1) { %>
 
-print is not defined
+print is not defined20220501	16:37:56 	 afe9c51c-ed18-48d5-a41d-87abbe3e8f9a 	 SyntaxError: Unexpected token ')' in C:\Users\tre12\Desktop\backend-final\views\index.html while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.

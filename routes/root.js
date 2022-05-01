@@ -16,7 +16,6 @@ router.get("^/$|/index(.html)?", (req, res) => {
             res.render('index', {statesList});
         }
     });
-    
 });
 
 

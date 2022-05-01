@@ -100,12 +100,17 @@
                     </div>
                     <div class="names__names_holder center">
                         <% const states = []; %>
+                        <% const codes = []; %>
                             <% for (var key in statesList) {
                                 if (statesList.hasOwnProperty(key)) states.push(statesList[key].state);
+                                if (statesList.hasOwnProperty(key)) codes.push(statesList[key].code);
                             }
                             %>
                             <% for (i = 0; i < states.length; i++ ) {
-                                if (states.indexOf(states[i].slice(0,1)) == -1) states.splice(i, 0, states[i].slice(0,1))
+                                if (states.indexOf(states[i].slice(0,1)) == -1) {
+                                    states.splice(i, 0, states[i].slice(0,1));
+                                    codes.splice(i, 0, '#');
+                                }
                             }
                             %>
                         <div class="names__names_column center">
@@ -124,7 +129,7 @@
                         <div class="names__names_column center">
                             <% for (i = 22; i < 45; i++) { %>
                                 <% if (states[i].length > 1) { %>
-                                    <a href="#" class="names__item p-text">
+                                    <a href='<%= codes[i] %>' class="names__item p-text">
                                         <%= states[i] %>
                                     </a>
                                 <% } else { %>
@@ -168,17 +173,89 @@
                         %>
                     %>
                     <div class="regions__region_holder center">
-                        <div class="regions__column">
-                            <h4 class="bold-text">Northeast</h4>
+                        <div class="regions__column center">
+                            <h2 class="head-text">Northeast</h2>
+                            <h3 class="bold-text">New England</h3>
+                            <div class="regions__list center">
+                                <% for (var key in regions) { %>
+                                    <% if (regions[key] == 'New England') { %>
+                                        <a href="#" class="regions__item p-text"><%= key %></a>
+                                    <% } %>
+                                <% } %>
+                            </div>
+                            <h5 class="bold-text">Middle Atlantic</h5>
+                            <div class="regions__list center">
+                                <% for (var key in regions) { %>
+                                    <% if (regions[key] == 'Middle Atlantic') { %>
+                                        <a href="#" class="regions__item p-text"><%= key %></a>
+                                    <% } %>
+                                <% } %>
+                            </div>
                         </div>
-                        <div class="regions__column">
-                            <h4 class="bold-text">Midwest</h4>
+                        <div class="regions__column center">
+                            <h2 class="head-text">Midwest</h2>
+                            <h5 class="bold-text">East North Central</h5>
+                            <div class="regions__list center">
+                                <% for (var key in regions) { %>
+                                    <% if (regions[key] == 'East North Central') { %>
+                                        <a href="#" class="regions__item p-text"><%= key %></a>
+                                    <% } %>
+                                <% } %>
+                            </div>
+                            <h5 class="bold-text">West North Central</h5>
+                            <div class="regions__list center">
+                                <% for (var key in regions) { %>
+                                    <% if (regions[key] == 'West North Central') { %>
+                                        <a href="#" class="regions__item p-text"><%= key %></a>
+                                    <% } %>
+                                <% } %>
+                            </div>
                         </div>
-                        <div class="regions__column">
-                            <h4 class="bold-text">South</h4>
+                        <div class="regions__column center">
+                            <h2 class="head-text">South</h2>
+                            <h5 class="bold-text">South Atlantic</h5>
+                            <div class="regions__list center">
+                                <% for (var key in regions) { %>
+                                    <% if (regions[key] == 'South Atlantic') { %>
+                                        <a href="#" class="regions__item p-text"><%= key %></a>
+                                    <% } %>
+                                <% } %>
+                            </div>
+                            <h5 class="bold-text">East South Central</h5>
+                            <div class="regions__list center">
+                                <% for (var key in regions) { %>
+                                    <% if (regions[key] == 'East South Central') { %>
+                                        <a href="#" class="regions__item p-text"><%= key %></a>
+                                    <% } %>
+                                <% } %>
+                            </div>
+                            <h5 class="bold-text">West South Central</h5>
+                            <div class="regions__list center">
+                                <% for (var key in regions) { %>
+                                    <% if (regions[key] == 'West South Central') { %>
+                                        <a href="#" class="regions__item p-text"><%= key %></a>
+                                    <% } %>
+                                <% } %>
+                            </div>
                         </div>
-                        <div class="regions__column">
-                            <h4 class="bold-text">West</h4>
+                        <div class="regions__column center">
+                            <h2 class="head-text">West</h2>
+                            <h5 class="bold-text">Mountain</h5>
+                            <div class="regions__list center">
+                                <% for (var key in regions) { %>
+                                    <% if (regions[key] == 'Mountain') { %>
+                                        <a href="#" class="regions__item p-text"><%= key %></a>
+                                    <% } %>
+                                <% } %>
+                            </div>
+                            <h5 class="bold-text">Pacific</h5>
+                            <div class="regions__list center">
+                                <% for (var key in regions) { %>
+                                    <% if (regions[key] == 'Pacific') { %>
+                                        <a href="#" class="regions__item p-text"><%= key %></a>
+                                    <% } %>
+                                <% } %>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -207,6 +284,7 @@
         }
         begin.classList.remove('header__hide');
     }
+
 </script>
 
 </html>
