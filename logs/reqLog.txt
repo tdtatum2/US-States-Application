@@ -1630,3 +1630,8 @@
 20220501	16:48:02 	 8b01f9e1-b597-4f5b-9be7-9ba73e2ecdee 	 GET 	 undefined 	 /css/main.css
 20220501	16:48:11 	 367c23f7-749f-41ca-ba18-de64353246ca 	 GET 	 undefined 	 /KY
 20220501	16:48:11 	 844b7b48-15b6-4dcd-b6ff-52d7471abe13 	 GET 	 undefined 	 /css/main.css
+20220502	10:51:14 	 0f024496-0641-4426-aa3c-46eda3df3a9b 	 GET 	 undefined 	 /
+20220502	10:51:14 	 08108a1b-32f1-421b-910d-eecb0e149336 	 GET 	 undefined 	 /css/main.css
+20220502	10:51:14 	 bcaddd5f-f97c-4778-b077-afa8f5690172 	 GET 	 undefined 	 /img/navlogo.png
+20220502	10:51:32 	 aa252ebd-6cb5-46fb-82d1-93019a340a6d 	 GET 	 undefined 	 /KS
+20220502	10:51:32 	 89047191-bcd9-4f56-b615-2f2130003dc7 	 GET 	 undefined 	 /css/main.css
