@@ -24,7 +24,7 @@ const getStates = async (req, res) => {
 
 // Get Specific State
 const getState = async (req, res) => {
-    const code = req.params.state;
+    const code = (req.params.state).toUpperCase();
     const check = (check) => check == code;
     fs.readFile('./model/states.json', (err, data) => {
         if (err) throw err;

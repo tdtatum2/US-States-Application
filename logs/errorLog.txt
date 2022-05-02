@@ -1501,4 +1501,20 @@ Or, if you meant to create an async function, pass `async: true` as an option.20
     186|                                     <% } counter++; %>
     187|                                 <% } %>
 
-Assignment to constant variable.20220502	11:12:16 	 e80223de-32b2-40e5-84dc-3d151f65b541 	 TypeError: Cannot read properties of undefined (reading 'toUpperCase')20220502	11:12:41 	 0a01c53a-2800-4bca-bd99-f6fe8cbc6ce7 	 TypeError: Cannot read properties of undefined (reading 'toUpperCase')20220502	11:12:46 	 578aaca1-6722-476f-8451-88893915e946 	 TypeError: Cannot read properties of undefined (reading 'toUpperCase')20220502	11:12:51 	 f29cdbd3-7d75-4ee2-860e-93f231e9a46d 	 TypeError: Cannot read properties of undefined (reading 'toUpperCase')20220502	11:13:47 	 e6578f86-f1a3-4d0f-9196-590f7dcac4d0 	 TypeError: Cannot read properties of undefined (reading 'toUpperCase')
+Assignment to constant variable.20220502	11:12:16 	 e80223de-32b2-40e5-84dc-3d151f65b541 	 TypeError: Cannot read properties of undefined (reading 'toUpperCase')20220502	11:12:41 	 0a01c53a-2800-4bca-bd99-f6fe8cbc6ce7 	 TypeError: Cannot read properties of undefined (reading 'toUpperCase')20220502	11:12:46 	 578aaca1-6722-476f-8451-88893915e946 	 TypeError: Cannot read properties of undefined (reading 'toUpperCase')20220502	11:12:51 	 f29cdbd3-7d75-4ee2-860e-93f231e9a46d 	 TypeError: Cannot read properties of undefined (reading 'toUpperCase')20220502	11:13:47 	 e6578f86-f1a3-4d0f-9196-590f7dcac4d0 	 TypeError: Cannot read properties of undefined (reading 'toUpperCase')20220502	12:13:09 	 de03fdf9-694c-4776-b25f-a13d60867484 	 ReferenceError: C:\Users\tre12\Desktop\backendfinal\views\state.html:40
+    38|                 <tr class="whitebg">
+    39|                     <td class="bold-text">Capital</td>
+ >> 40|                     <td><a class="p-text" href=<%= capital_url %>><%= capital %></a></td>
+    41|                 </tr>
+    42|                 <tr class="bluebg">
+    43|                     <td class="bold-text">Population</td>
+
+capital is not defined20220502	12:14:59 	 7c6da012-7f56-4e7e-83d0-a2c0102891f9 	 SyntaxError: Unexpected identifier in C:\Users\tre12\Desktop\backendfinal\views\state.html while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.20220502	12:15:21 	 3a64e9c7-7a24-439a-8617-181954ed8900 	 SyntaxError: Unexpected identifier in C:\Users\tre12\Desktop\backendfinal\views\state.html while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.20220502	13:42:25 	 c306f440-1abd-404c-a9aa-bf46f9b0d379 	 Error: Could not find matching close tag for "<%=".

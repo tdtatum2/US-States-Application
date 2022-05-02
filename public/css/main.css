@@ -200,9 +200,11 @@
     margin: 1rem;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
+    font-family: var(--font-base);
+    text-decoration: none;
 }
 
-.header__button:hover {
+.header__button:hover  {
     background-color: var(--white-color);
     color: var(--blue-color);
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.75);
@@ -215,6 +217,12 @@
 .header__hide {
     display: none;
 }
+
+.header__button_holder_error {
+    flex-direction: column;
+}
+
+
 
 
 

@@ -4,17 +4,149 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= state %></title>
-    <link rel="stylesheet" type="text/css" href="css/state.css">
+    <title>US States - <%= state %></title>
+    <link rel="stylesheet" type="text/css" href="/css/state.css">
 </head>
 <body>
-    <div class="state__state container">
-        <div class="state__header">
-            <div class="state__flag">
-                <img src="<%= state_flag_url %>" alt="<%= state %> Flag">
-            </div>
-            <div class="state__name">
-                <h1 class="bold-text"><%= state %></h1>
+    <nav class="state__nav">
+        <ul class="state__nav_items center">
+            <li class="state__nav_item p-text center">
+                <div></div>
+                <a href="../index.html" class="p-text">
+                    ← Back Home
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container state__state center lightgreybg">
+        <div class="wrapper">
+            <div class="state__content">
+                <div class="state__header whitebg">
+                    <div class="state__flag">
+                        <img src="<%= state_flag_url %>" alt="<%= state %> Flag">
+                    </div>
+                    <div class="state__title">
+                        <h1 class="head-text"><span><%= state %></span></h1>
+                    </div>
+                </div>
+                <div class="state__info_holder center">
+                    <div class="state__card center redbg">
+                        <div class="state__card_title center">
+                            <h2 class="bold-text">Region</h2>
+                        </div>
+                        <div class="state__card_body">
+                            <p class="p-text"><%= region %></p>
+                        </div>
+                    </div>
+                    <div class="state__card center whitebg">
+                        <div class="state__card_title center">
+                            <h2 class="bold-text">Nickname</h2>
+                        </div>
+                        <div class="state__card_body">
+                            <p class="p-text"><%= nickname %></p>
+                        </div>
+                    </div>
+                    <div class="state__card center bluebg">
+                        <div class="state__card_title center">
+                            <h2 class="bold-text">Website</h2>
+                        </div>
+                        <div class="state__card_body">
+                            <a class="p-text" href=<%= website %>><%= website %></a>
+                        </div>
+                    </div>
+                    <div class="state__card center redbg">
+                        <div class="state__card_title center">
+                            <h2 class="bold-text">Admission Date</h2>
+                        </div>
+                        <div class="state__card_body">
+                            <p class="p-text"><%= admission_date %> (# <%= admission_number %>)</p>
+                        </div>
+                    </div>
+                    <div class="state__card center whitebg">
+                        <div class="state__card_title center">
+                            <h2 class="bold-text">Capital</h2>
+                        </div>
+                        <div class="state__card_body">
+                            <a class="p-text" href=<%= capital_url %>><%= capital_city %></a>
+                        </div>
+                    </div>
+                    <div class="state__card center bluebg">
+                        <div class="state__card_title center">
+                            <h2 class="bold-text">Population</h2>
+                        </div>
+                        <div class="state__card_body">
+                            <p class="p-text"><%= population %> (Rank: <%= population_rank %>)</p>
+                        </div>
+                    </div>
+                    <div class="state__card center redbg">
+                        <div class="state__card_title center">
+                            <h2 class="bold-text">Constitution</h2>
+                        </div>
+                        <div class="state__card_body">
+                            <a class="p-text" href=<%= constitution_url %>>View Here</a>
+                        </div>
+                    </div>
+                    <div class="state__card center whitebg">
+                        <div class="state__card_title center">
+                            <h2 class="bold-text">Twitter</h2>
+                        </div>
+                        <div class="state__card_body">
+                            <% if (twitter_url) { %>
+                                <a class="p-text" href=<%= twitter_url %>>View Here</a>
+                            <% } else { %>
+                                <p class="p-text">None</p>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="state__card center bluebg">
+                        <div class="state__card_title center">
+                            <h2 class="bold-text">Facebook</h2>
+                        </div>
+                        <div class="state__card_body">
+                            <% if (facebook_url) { %>
+                                <a class="p-text" href=<%= facebook_url %>>View Here</a>
+                            <% } else { %>
+                                <p class="p-text">None</p>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+                <div class="state__seals_holder center">
+                    <div class="state__seal_card center whitebg">
+                        <div class="state__seal_card_img center">
+                            <a href="<%= state_seal_url %>" class="center" target="_blank">
+                                <img src="<%= state_seal_url %>" class="center" alt="<%= state %> State Seal">
+                            </a>
+                        </div>
+                        <div class="state__card_body">
+                            <p class="bold-text"><%= state %>'s State Seal</p>
+                        </div>
+                    </div>
+                    <div class="state__seal_card center whitebg">
+                        <div class="state__seal_card_img center">
+                            <a href="<%= map_image_url %>" class="center" target="_blank"></a>
+                            <img src="<%= map_image_url %>" class="center" alt="<%= state %> Map">
+                        </div>
+                        <div class="state__card_body">
+                            <p class="bold-text"><%= state %>'s Position on Map</p>
+                        </div>
+                    </div>
+                    <div class="state__seal_card center" style="background: url(<%= landscape_background_url %>); background-repeat: no-repeat; background-position: center; background-size: cover;">
+                        <div class="state__seal_card_img center" >
+                        </div>
+                        <div class="state__card_body">
+                            <p class="head-text bg-text"><%= state %>'s Landscape</p>
+                        </div>
+                    </div>
+                    <div class="state__seal_card center" style="background: url(<%= skyline_background_url %>); background-repeat: no-repeat; background-position: center; background-size: cover;">
+                        <div class="state__seal_card_img center">
+                        </div>
+                        <div class="state__card_body">
+                            <p class="head-text bg-text"><%= state %>'s Skyline</p>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </div>
