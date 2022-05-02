@@ -1489,4 +1489,16 @@ print is not defined20220501	16:37:56 	 afe9c51c-ed18-48d5-a41d-87abbe3e8f9a 	 S
 
 If the above error is not helpful, you may want to try EJS-Lint:
 https://github.com/RyanZim/EJS-Lint
-Or, if you meant to create an async function, pass `async: true` as an option.
+Or, if you meant to create an async function, pass `async: true` as an option.20220501	16:59:10 	 7fb49247-379d-41ef-aabc-dc393894611a 	 SyntaxError: Identifier 'codes' has already been declared in C:\Users\tre12\Desktop\backend-final\views\index.html while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.20220501	16:59:37 	 3ca9b520-4a2d-46be-88ed-50ef3fe180e4 	 TypeError: C:\Users\tre12\Desktop\backend-final\views\index.html:184
+    182|                                 <% const counter = 0 %>
+    183|                                 <% for (var key in regions) { %>
+ >> 184|                                     <% if (regions[key] == 'New England') { %>
+    185|                                         <a href="<%= codes[counter] %>" class="regions__item p-text"><%= key %></a>
+    186|                                     <% } counter++; %>
+    187|                                 <% } %>
+
+Assignment to constant variable.
