@@ -62,15 +62,6 @@ app.engine('html', require('ejs').renderFile);
 // ALL ROUTES
 app.use("/", require("./routes/root"));
 
-fs.readFile('./model/states.json', 'utf8', function(err, data) {
-  if (err) {
-      console.log(err);
-  } else {
-      const states = JSON.parse(data);
-      const statesList = Object.assign({}, states);
-  }
-});
-
 
 // 404 ROUTES
 app.all("*", (req, res) => {

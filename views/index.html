@@ -168,7 +168,9 @@
                     </div>
                     <% const regions = {}; %>
                         <% for (var key in statesList) {
-                            if (statesList.hasOwnProperty(key)) regions[statesList[key].state] = statesList[key].region;
+                            if (statesList.hasOwnProperty(key)) {
+                                regions[statesList[key].state] = statesList[key].region;
+                            }
                         }
                         %>
                     %>
@@ -177,10 +179,11 @@
                             <h2 class="head-text">Northeast</h2>
                             <h3 class="bold-text">New England</h3>
                             <div class="regions__list center">
+                                <% var counter = 0 %>
                                 <% for (var key in regions) { %>
                                     <% if (regions[key] == 'New England') { %>
-                                        <a href="#" class="regions__item p-text"><%= key %></a>
-                                    <% } %>
+                                        <a href="<%= codes[counter] %>" class="regions__item p-text"><%= key %></a>
+                                    <% } counter++; %>
                                 <% } %>
                             </div>
                             <h5 class="bold-text">Middle Atlantic</h5>
