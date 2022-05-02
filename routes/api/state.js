@@ -6,9 +6,11 @@ const statesController = require("../../controllers/statesController");
 
 
 // ROUTER
-router
-    .route('/')
-    .get(statesController.getStates)
+// router
+//     .route('/')
+// //     .get(statesController.getStates)
+
+// router.route("/:state").get(statesController.getState);
 
 router.route("/:state").get(statesController.getState);
 

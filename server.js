@@ -62,6 +62,7 @@ app.engine('html', require('ejs').renderFile);
 // ALL ROUTES
 app.use("/", require("./routes/root"));
 
+app.use('/state', require('./routes/api/state'));
 
 // 404 ROUTES
 app.all("*", (req, res) => {

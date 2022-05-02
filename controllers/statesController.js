@@ -24,13 +24,32 @@ const getStates = async (req, res) => {
 
 // Get Specific State
 const getState = async (req, res) => {
-    if(!req.body?.state) {
-        return res.status(400).json({ message: "State Name is required." });
-    }
+    const code = req.params.state;
+    const check = (check) => check == code;
+    fs.readFile('./model/states.json', (err, data) => {
+        if (err) throw err;
+        const statesList = JSON.parse(data);
+        const codes = []
+        for(var key in statesList) {
+            if (statesList.hasOwnProperty(key)) {
+                codes.push(statesList[key].code);
+            }
+        }
+        if (codes.findIndex(check) > -1) {
+            const state = statesList[codes.findIndex(check)];
+            console.log(state);
+            return res.render('state', state);
+        } else {
+            return res.render('no_state');
+        }
+    })
 }
 
 
 
 
 // EXPORT SECTION
-module.exports = getStates;
+module.exports = {
+    getStates,
+    getState
+};

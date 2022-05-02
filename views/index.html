@@ -75,7 +75,7 @@
                     <div class="flags__flag_holder center" id="flag_holder">
                         <!--  -->
                         <% for (i = 0; i < 50; i++) { %>
-                            <a href="#" class="flags__card center">
+                            <a href="state/<%= statesList[i].code %>" class="flags__card center">
                                 <div class="flags__card_img center">
                                     <img src="<%= statesList[i].state_flag_url %>" alt="<%= statesList[i].code %>">
                                 </div>
@@ -101,9 +101,11 @@
                     <div class="names__names_holder center">
                         <% const states = []; %>
                         <% const codes = []; %>
+                        <% const reg_codes = []; %>
                             <% for (var key in statesList) {
                                 if (statesList.hasOwnProperty(key)) states.push(statesList[key].state);
                                 if (statesList.hasOwnProperty(key)) codes.push(statesList[key].code);
+                                if (statesList.hasOwnProperty(key)) reg_codes.push(statesList[key].code);
                             }
                             %>
                             <% for (i = 0; i < states.length; i++ ) {
@@ -116,7 +118,7 @@
                         <div class="names__names_column center">
                             <% for (i = 0; i < 22; i++) { %>
                                 <% if (states[i].length > 1) { %>
-                                    <a href="#" class="names__item p-text">
+                                    <a href="state/<%= codes[i] %>" class="names__item p-text">
                                         <%= states[i] %>
                                     </a>
                                 <% } else { %>
@@ -129,7 +131,7 @@
                         <div class="names__names_column center">
                             <% for (i = 22; i < 45; i++) { %>
                                 <% if (states[i].length > 1) { %>
-                                    <a href='<%= codes[i] %>' class="names__item p-text">
+                                    <a href="state/<%= codes[i] %>" class="names__item p-text">
                                         <%= states[i] %>
                                     </a>
                                 <% } else { %>
@@ -142,7 +144,7 @@
                         <div class="names__names_column center">
                             <% for (i = 45; i < 69; i++) { %>
                                 <% if (states[i].length > 1) { %>
-                                    <a href="#" class="names__item p-text">
+                                    <a href="state/<%= codes[i] %>" class="names__item p-text">
                                         <%= states[i] %>
                                     </a>
                                 <% } else { %>
@@ -179,19 +181,22 @@
                             <h2 class="head-text">Northeast</h2>
                             <h3 class="bold-text">New England</h3>
                             <div class="regions__list center">
-                                <% var counter = 0 %>
+                                <% var counter = 0; %>
                                 <% for (var key in regions) { %>
                                     <% if (regions[key] == 'New England') { %>
-                                        <a href="<%= codes[counter] %>" class="regions__item p-text"><%= key %></a>
-                                    <% } counter++; %>
+                                        <a href="state/<%= reg_codes[counter] %>" class="regions__item p-text"><%= key %></a>
+                                    <% } %>
+                                    <% counter++; %>
                                 <% } %>
                             </div>
                             <h5 class="bold-text">Middle Atlantic</h5>
                             <div class="regions__list center">
+                                <% counter = 0; %>
                                 <% for (var key in regions) { %>
                                     <% if (regions[key] == 'Middle Atlantic') { %>
-                                        <a href="#" class="regions__item p-text"><%= key %></a>
+                                        <a href="state/<%= reg_codes[counter] %>" class="regions__item p-text"><%= key %></a>
                                     <% } %>
+                                    <% counter++; %>
                                 <% } %>
                             </div>
                         </div>
@@ -199,18 +204,22 @@
                             <h2 class="head-text">Midwest</h2>
                             <h5 class="bold-text">East North Central</h5>
                             <div class="regions__list center">
+                                <% counter = 0; %>
                                 <% for (var key in regions) { %>
                                     <% if (regions[key] == 'East North Central') { %>
-                                        <a href="#" class="regions__item p-text"><%= key %></a>
+                                        <a href="state/<%= reg_codes[counter] %>" class="regions__item p-text"><%= key %></a>
                                     <% } %>
+                                    <% counter++; %>
                                 <% } %>
                             </div>
                             <h5 class="bold-text">West North Central</h5>
                             <div class="regions__list center">
+                                <% counter = 0; %>
                                 <% for (var key in regions) { %>
                                     <% if (regions[key] == 'West North Central') { %>
-                                        <a href="#" class="regions__item p-text"><%= key %></a>
+                                        <a href="state/<%= reg_codes[counter] %>" class="regions__item p-text"><%= key %></a>
                                     <% } %>
+                                    <% counter++; %>
                                 <% } %>
                             </div>
                         </div>
@@ -218,26 +227,32 @@
                             <h2 class="head-text">South</h2>
                             <h5 class="bold-text">South Atlantic</h5>
                             <div class="regions__list center">
+                                <% counter = 0; %>
                                 <% for (var key in regions) { %>
                                     <% if (regions[key] == 'South Atlantic') { %>
-                                        <a href="#" class="regions__item p-text"><%= key %></a>
+                                        <a href="state/<%= reg_codes[counter] %>" class="regions__item p-text"><%= key %></a>
                                     <% } %>
+                                    <% counter++; %>
                                 <% } %>
                             </div>
                             <h5 class="bold-text">East South Central</h5>
                             <div class="regions__list center">
+                                <% counter = 0; %>
                                 <% for (var key in regions) { %>
                                     <% if (regions[key] == 'East South Central') { %>
-                                        <a href="#" class="regions__item p-text"><%= key %></a>
+                                        <a href="state/<%= reg_codes[counter] %>" class="regions__item p-text"><%= key %></a>
                                     <% } %>
+                                    <% counter++; %>
                                 <% } %>
                             </div>
                             <h5 class="bold-text">West South Central</h5>
                             <div class="regions__list center">
+                                <% counter = 0; %>
                                 <% for (var key in regions) { %>
                                     <% if (regions[key] == 'West South Central') { %>
-                                        <a href="#" class="regions__item p-text"><%= key %></a>
+                                        <a href="state/<%= reg_codes[counter] %>" class="regions__item p-text"><%= key %></a>
                                     <% } %>
+                                    <% counter++; %>
                                 <% } %>
                             </div>
                         </div>
@@ -245,18 +260,22 @@
                             <h2 class="head-text">West</h2>
                             <h5 class="bold-text">Mountain</h5>
                             <div class="regions__list center">
+                                <% counter = 0; %>
                                 <% for (var key in regions) { %>
                                     <% if (regions[key] == 'Mountain') { %>
-                                        <a href="#" class="regions__item p-text"><%= key %></a>
+                                        <a href="state/<%= reg_codes[counter] %>" class="regions__item p-text"><%= key %></a>
                                     <% } %>
+                                    <% counter++; %>
                                 <% } %>
                             </div>
                             <h5 class="bold-text">Pacific</h5>
                             <div class="regions__list center">
+                                <% counter = 0; %>
                                 <% for (var key in regions) { %>
                                     <% if (regions[key] == 'Pacific') { %>
-                                        <a href="#" class="regions__item p-text"><%= key %></a>
+                                        <a href="state/<%= reg_codes[counter] %>" class="regions__item p-text"><%= key %></a>
                                     <% } %>
+                                    <% counter++; %>
                                 <% } %>
                             </div>
                         </div>
