@@ -12,7 +12,7 @@
         <ul class="state__nav_items center">
             <li class="state__nav_item p-text center">
                 <div></div>
-                <a href="../index.html" class="p-text">
+                <a href="./" class="p-text">
                     ← Back Home
                 </a>
             </li>
@@ -145,10 +145,84 @@
                             <p class="head-text bg-text"><%= state %>'s Skyline</p>
                         </div>
                     </div>
-                    
+                    <% if (typeof funFacts !== 'undefined') { %>
+                        <div class="state__card_ff center whitebg">
+                            <div class="state__card_title center">
+                                <h2 class="bold-text">Fun Facts</h2>
+                            </div>
+                            <div class="state__card_body_ff center">
+                                <button class="states__button" id="funFact_open" onclick="funFactStart()">
+                                    Learn More!
+                                </button>
+                                <p class="p-text funFact_hide" id="funFact0"><%= funFacts.funFacts[0] %></p>
+                                <p class="p-text funFact_hide" id="funFact1"><%= funFacts.funFacts[1] %></p>
+                                <p class="p-text funFact_hide" id="funFact2"><%= funFacts.funFacts[2] %></p>
+                                <div class="state__card_body_ff_buttons center">
+                                    <button class="states__button funFact_hide" id="funFact_next" onclick="funFactNext()">
+                                        New Fun Fact
+                                    </button>
+                                    <button class="states__button funFact_hide" id="funFact_edit" onclick="funFactEdit()">
+                                        Edit Mode
+                                    </button>
+                                </div>
+                                <div class="state__edit funFact_hide" id="funFact_edit_form">
+                                    <form method="get">
+                                        <input type="hidden" name="id" value="<%= funFacts._id %>">
+                                        <button class="states__button" type="submit">ID</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
+
+<script>
+    const start = document.getElementById('funFact_open');
+    const next = document.getElementById('funFact_next');
+    const edit = document.getElementById('funFact_edit');
+    const edit_form = document.getElementById('funFact_edit_form');
+    const ff0 = document.getElementById('funFact0');
+    const ff1 = document.getElementById('funFact1');
+    const ff2 = document.getElementById('funFact2');
+    
+
+    const funFactStart = () => {
+        start.classList.add('funFact_hide');
+        next.classList.remove('funFact_hide');
+        edit.classList.remove('funFact_hide');
+        var ff = Math.floor(Math.random() * 3);
+        if (ff == 0) {
+            ff0.classList.remove('funFact_hide');
+        } else if (ff == 1) {
+            ff1.classList.remove('funFact_hide');
+        } else if (ff == 2) {
+            ff2.classList.remove('funFact_hide');
+        }
+    }
+
+    const funFactNext = () => {
+        ff0.classList.add('funFact_hide');
+        ff1.classList.add('funFact_hide');
+        ff2.classList.add('funFact_hide');
+        var ff = Math.floor(Math.random() * 3);
+        if (ff == 0) {
+            ff0.classList.remove('funFact_hide');
+        } else if (ff == 1) {
+            ff1.classList.remove('funFact_hide');
+        } else if (ff == 2) {
+            ff2.classList.remove('funFact_hide');
+        }
+    }
+
+    const funFactEdit = () => {
+        edit_form.classList.remove('funFact_hide');
+    }
+
+</script>
+
 </html>

@@ -13,4 +13,6 @@ const stateSchema = new Schema ({
     }
 });
 
-module.exports = mongoose.model("States", stateSchema);
+stateSchema.set('collection', 'statesDB');
+
+module.exports = mongoose.model("statesDB", stateSchema);

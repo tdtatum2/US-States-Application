@@ -1517,4 +1517,100 @@ Or, if you meant to create an async function, pass `async: true` as an option.20
 
 If the above error is not helpful, you may want to try EJS-Lint:
 https://github.com/RyanZim/EJS-Lint
-Or, if you meant to create an async function, pass `async: true` as an option.20220502	13:42:25 	 c306f440-1abd-404c-a9aa-bf46f9b0d379 	 Error: Could not find matching close tag for "<%=".
+Or, if you meant to create an async function, pass `async: true` as an option.20220502	13:42:25 	 c306f440-1abd-404c-a9aa-bf46f9b0d379 	 Error: Could not find matching close tag for "<%=".20220505	18:42:33 	 9934f33c-8b56-4d7c-a8a2-5a2d4cadb8b5 	 Error: Failed to lookup view "states/index" in views directory "C:\Users\tre12\Desktop\backendfinal\views"20220505	19:23:27 	 3d2bcc06-5b7d-4cb8-b3fa-24490f9d006a 	 ReferenceError: C:\Users\tre12\Desktop\backendfinal\views\index.html:80
+    78|                         <!--  -->
+    79|                         <% for (i = 0; i < 50; i++) { %>
+ >> 80|                             <a href="<%= statesList[i].code %>" class="flags__card center">
+    81|                                 <div class="flags__card_img center">
+    82|                                     <img src="<%= statesList[i].state_flag_url %>" alt="<%= statesList[i].code %>">
+    83|                                 </div>
+
+statesList is not defined20220505	19:23:27 	 e77d070d-9daf-484a-92f1-88a5a7b3a0c4 	 URIError: Failed to decode param '%3C%=%20statesList[i].state_flag_url%20%%3E'20220505	20:37:43 	 171e6f9a-496d-4ea6-9ed4-51f9b626a38f 	 TypeError: C:\Users\tre12\Desktop\backendfinal\views\index.html:95
+    93|                         <!--  -->
+    94|                         <% for (i = 0; i < 50; i++) { %>
+ >> 95|                             <a href="<%= statesList[i].code %>" class="flags__card center">
+    96|                                 <div class="flags__card_img center">
+    97|                                     <img src="<%= statesList[i].state_flag_url %>" alt="<%= statesList[i].code %>">
+    98|                                 </div>
+
+Cannot read properties of undefined (reading 'code')20220505	20:37:43 	 9e2de135-fdd2-4fd1-95a8-9398426eb901 	 URIError: Failed to decode param '%3C%=%20statesList[i].state_flag_url%20%%3E'20220505	20:39:05 	 cff4d438-d55f-42c3-8771-896c9d10e9d0 	 TypeError: C:\Users\tre12\Desktop\backendfinal\views\index.html:95
+    93|                         <!--  -->
+    94|                         <% for (i = 0; i < 50; i++) { %>
+ >> 95|                             <a href="<%= statesList[i].code %>" class="flags__card center">
+    96|                                 <div class="flags__card_img center">
+    97|                                     <img src="<%= statesList[i].state_flag_url %>" alt="<%= statesList[i].code %>">
+    98|                                 </div>
+
+Cannot read properties of undefined (reading 'code')20220505	20:39:05 	 693ead2b-358b-4019-adfc-58269101a160 	 URIError: Failed to decode param '%3C%=%20statesList[i].state_flag_url%20%%3E'20220505	20:54:54 	 91ecf180-d05b-4424-b6cb-64249f2c181e 	 TypeError: C:\Users\tre12\Desktop\backendfinal\views\index.html:163
+    161|                         <div class="names__names_column center">
+    162|                             <% for (i = 45; i < 69; i++) { %>
+ >> 163|                                 <% if (states[i].length > 1) { %>
+    164|                                     <a href="<%= codes[i] %>" class="names__item p-text">
+    165|                                         <%= states[i] %>
+    166|                                     </a>
+
+Cannot read properties of undefined (reading 'length')20220505	21:10:08 	 b6fd00cb-e62f-4e75-8868-b33b0bb1e34c 	 SyntaxError: Unexpected token 'else' in C:\Users\tre12\Desktop\backendfinal\views\index.html while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.20220505	21:15:18 	 e095b757-3abd-4a9f-bdc6-3865424b254d 	 SyntaxError: Unexpected token 'catch' in C:\Users\tre12\Desktop\backendfinal\views\index.html while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.20220505	21:15:49 	 a02939ab-a145-4748-a26d-d3f2c6d0c1ff 	 SyntaxError: Unexpected token 'catch' in C:\Users\tre12\Desktop\backendfinal\views\index.html while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.20220505	21:22:03 	 ce54d89e-8f4c-4f80-8fbd-b5824b5bec91 	 SyntaxError: Missing catch or finally after try in C:\Users\tre12\Desktop\backendfinal\views\index.html while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.20220505	21:22:05 	 867fceaa-1542-41e1-aa7d-f3ae65054ee7 	 SyntaxError: Missing catch or finally after try in C:\Users\tre12\Desktop\backendfinal\views\index.html while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.20220505	21:22:35 	 8e8807e2-a8aa-4d20-8ea3-2d0f8110f120 	 SyntaxError: Missing catch or finally after try in C:\Users\tre12\Desktop\backendfinal\views\index.html while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.20220505	21:22:37 	 61f0fca6-7300-4074-b49b-ee608cb4c778 	 SyntaxError: Missing catch or finally after try in C:\Users\tre12\Desktop\backendfinal\views\index.html while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.20220505	21:23:05 	 040d5a26-4540-41a4-bf40-78d284163790 	 SyntaxError: Missing catch or finally after try in C:\Users\tre12\Desktop\backendfinal\views\index.html while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.20220505	21:24:58 	 2d622641-2169-48ff-954c-0299c7325a34 	 ReferenceError: C:\Users\tre12\Desktop\backendfinal\views\index.html:221
+    219|                                     <% for (var key in regions) { %>
+    220|                                         <% if (regions[key] == 'New England') { %>
+ >> 221|                                             <a href="<%= reg_codes[counter] %>" class="regions__item p-text"><%= key %></a>
+    222|                                         <% } %>
+    223|                                     <% counter++; } %>
+    224|                                 </div>
+
+reg_codes is not defined20220505	21:33:40 	 9264e2c7-8c0d-4a2f-abab-2b3d1d353674 	 ReferenceError: C:\Users\tre12\Desktop\backendfinal\views\index.html:233
+    231|                             <h3 class="bold-text">Pacific</h3>
+    232|                             <div class="regions__list center">
+ >> 233|                                 <a href="<%= reg_codes[0] %>" class="regions__item p-text"><%= regions[0] %></a>
+    234|                                 <a href="<%= reg_codes[1] %>" class="regions__item p-text"><%= regions[1] %></a>
+    235|                             </div>
+    236|                         </div>
+
+regions is not defined20220505	22:58:53 	 abd4f793-b596-40bf-86ce-a821e1b70a9e 	 ReferenceError: C:\Users\tre12\Desktop\backendfinal\views\state.html:148
+    146|                         </div>
+    147|                     </div>
+ >> 148|                     <% if (funFacts) { %>
+    149|                         <div class="state__card center whitebg">
+    150|                             <div class="state__card_title center">
+    151|                                 <h2 class="bold-text">Fun Facts</h2>
+
+funFacts is not defined20220505	23:21:01 	 ae6a6956-e890-4aff-934f-8866636cf00b 	 ReferenceError: C:\Users\tre12\Desktop\backendfinal\views\state.html:148
+    146|                         </div>
+    147|                     </div>
+ >> 148|                     <% if (typeof funFacts.funFacts !== 'undefined') { %>
+    149|                         <div class="state__card center whitebg">
+    150|                             <div class="state__card_title center">
+    151|                                 <h2 class="bold-text">Fun Facts</h2>
+
+funFacts is not defined
