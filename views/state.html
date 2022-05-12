@@ -166,10 +166,60 @@
                                     </button>
                                 </div>
                                 <div class="state__edit funFact_hide" id="funFact_edit_form">
-                                    <form method="get">
-                                        <input type="hidden" name="id" value="<%= funFacts._id %>">
-                                        <button class="states__button" type="submit">ID</button>
-                                    </form>
+                                    <% for (var key in funFacts.funFacts) { %>
+                                        <div class="state__edits">
+                                            <form method="get">
+                                                <input type="hidden" name="id" value="<%= funFacts._id %>">
+                                                <input type="hidden" name="line" value=<%= key %>>
+                                                <input type="text" name="content" value="<%= funFacts.funFacts[key] %>">
+                                                <button class="states__button" type="submit" name="action" value="update">Update</button>
+                                            </form>
+                                            <form method="get">
+                                                <input type="hidden" name="id" value="<%= funFacts._id %>">
+                                                <input type="hidden" name="line" value=<%= key %>>
+                                                <button class="states__button" type="submit" name="action" value="delete">Delete</button>
+                                            </form>
+                                        </div>
+                                    <% } %>
+                                    <!-- <div class="state__edits">
+                                        <form method="get">
+                                            <input type="hidden" name="id" value="<%= funFacts._id %>">
+                                            <input type="hidden" name="line" value=0>
+                                            <input type="text" name="content" value="<%= funFacts.funFacts[0] %>">
+                                            <button class="states__button" type="submit" name="action" value="update">Update</button>
+                                        </form>
+                                        <form method="get">
+                                            <input type="hidden" name="id" value="<%= funFacts._id %>">
+                                            <input type="hidden" name="line" value=0>
+                                            <button class="states__button" type="submit" name="action" value="delete">Delete</button>
+                                        </form>
+                                    </div>
+                                    <div class="state__edits">
+                                        <form method="get">
+                                            <input type="hidden" name="id" value="<%= funFacts._id %>">
+                                            <input type="hidden" name="line" value=1>
+                                            <input type="text" name="content" value="<%= funFacts.funFacts[1] %>">
+                                            <button class="states__button" type="submit" name="action" value="update">Update</button>
+                                        </form>
+                                        <form method="get">
+                                            <input type="hidden" name="id" value="<%= funFacts._id %>">
+                                            <input type="hidden" name="line" value=1>
+                                            <button class="states__button" type="submit" name="action" value="delete">Delete</button>
+                                        </form>
+                                    </div>
+                                    <div class="state__edits">
+                                        <form method="get">
+                                            <input type="hidden" name="id" value="<%= funFacts._id %>">
+                                            <input type="hidden" name="line" value=2>
+                                            <input type="text" name="content" value="<%= funFacts.funFacts[2] %>">
+                                            <button class="states__button" type="submit" name="action" value="update">Update</button>
+                                        </form>
+                                        <form method="get">
+                                            <input type="hidden" name="id" value="<%= funFacts._id %>">
+                                            <input type="hidden" name="line" value=2>
+                                            <button class="states__button" type="submit" name="action" value="delete">Delete</button>
+                                        </form>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>

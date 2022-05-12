@@ -1613,4 +1613,8 @@ funFacts is not defined20220505	23:21:01 	 ae6a6956-e890-4aff-934f-8866636cf00b 
     150|                             <div class="state__card_title center">
     151|                                 <h2 class="bold-text">Fun Facts</h2>
 
-funFacts is not defined
+funFacts is not defined20220512	14:58:05 	 73a79dfa-efd5-4d10-98f6-849530c0c192 	 SyntaxError: Unexpected token 'catch' in C:\Users\tre12\Desktop\backendfinal\views\state.html while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.

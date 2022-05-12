@@ -34,9 +34,40 @@ const getStates = async (req, res) => {
 
 // Get Specific State
 const getState = async (req, res) => {
+
+    // Checking for Update and Delete Requests
+    const ff__ID = req.query.id;
+    const ff__action = req.query.action;
+    const ff__line = req.query.line;
+    const ff__content = req.query.content;
+    if (ff__action == 'update') {
+        if(ff__ID && ff__line && ff__content)  {
+            const funFact = await statesDB.findOne({_id: ff__ID}).exec();
+            if(funFact) {
+                funFact.funFacts[ff__line] = ff__content;
+                result = await funFact.save();
+            }
+        }
+    } else if (ff__action == 'delete') {
+        if(ff__ID && ff__line) {
+            await statesDB.findByIdAndUpdate(
+                {_id: ff__ID},
+                {$unset: {"funFacts.1" : 1}}
+            );
+            await statesDB.findByIdAndUpdate(
+                {_id: ff__ID},
+                {$pull: {"funFacts": null}}
+            );
+        }
+    } else if (ff__action == 'add') {
+
+    }
+
     const funFacts = await statesDB.find({});
     const code = (req.params.state).toUpperCase();
     const check = (check) => check == code;
+
+    
     fs.readFile('./model/states.json', (err, data) => {
         if (err) throw err;
         const statesList = JSON.parse(data);

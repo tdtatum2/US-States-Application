@@ -324,6 +324,11 @@
     flex-direction: row;
 }
 
+.state__edits {
+    display: flex;
+    flex-direction: row;
+}
+
 /* MEDIA QUERIES */
 
 /* XL SCREENS */
